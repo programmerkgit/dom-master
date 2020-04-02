@@ -10,7 +10,8 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 export class RangeComponent implements OnInit {
 
   links: { url: string }[] = [
-    {url: 'basic'}
+    {url: 'basic'},
+    {url: 'selection-change'}
   ];
 
   constructor() {
