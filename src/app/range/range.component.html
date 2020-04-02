@@ -1,0 +1,6 @@
+<aside>
+  <ul>
+    <li *ngFor="let link of links"><a [routerLink]="link.url">{{link.url}}</a></li>
+  </ul>
+</aside>
+<router-outlet></router-outlet>

@@ -1,0 +1,38 @@
+<div #rangeParent>
+  0: first-text-node
+  <span>1: second-span</span>
+  <div>
+    2: third-node
+    <span>span-node wihtin third-node</span>
+  </div>
+  3: last-node
+</div>
+<div #anotherRangeTarget>
+  0: first-text-node
+  <span>1: second-span</span>
+  <div>
+    2: third-node
+    <span>span-node wihtin third-node</span>
+  </div>
+  3: last-node
+</div>
+<form [formGroup]="rangeFrom">
+  <label>
+    start:<input type="number" formControlName="start">
+  </label>
+  <br>
+  <label>
+    end:<input type="number" formControlName="end">
+  </label>
+</form>
+<button (click)="addRange()">set range</button>
+<form [formGroup]="anotherForm">
+  <label>
+    start:<input type="number" formControlName="start">
+  </label>
+  <br>
+  <label>
+    end:<input type="number" formControlName="end">
+  </label>
+</form>
+<button (click)="addAnotherRange()">set another range</button>
