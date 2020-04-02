@@ -36,3 +36,13 @@
   </label>
 </form>
 <button (click)="addAnotherRange()">set another range</button>
+<form [formGroup]="textRangeForm">
+  <label>
+    text-start:<input type="number" formControlName="start">
+  </label>
+  <br>
+  <label>
+    text-end:<input type="number" formControlName="end">
+  </label>
+</form>
+<button (click)="addTextRange()">text-range</button>

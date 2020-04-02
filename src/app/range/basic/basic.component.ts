@@ -27,6 +27,11 @@ export class BasicComponent implements OnInit {
     end: [0]
   });
 
+  textRangeForm: FormGroup = this.fb.group({
+    start: [0],
+    end: [0]
+  });
+
   constructor(
     private fb: FormBuilder
   ) {
@@ -44,6 +49,14 @@ export class BasicComponent implements OnInit {
     const range = new Range();
     range.setStart(this.rangeParent.nativeElement, this.anotherForm.get('start').value);
     range.setEnd(this.anotherRangeTarget.nativeElement, this.anotherForm.get('end').value);
+    document.getSelection().removeAllRanges();
+    document.getSelection().addRange(range);
+  }
+
+  addTextRange() {
+    const range = new Range();
+    range.setStart(this.rangeParent.nativeElement.firstChild, this.textRangeForm.get('start').value);
+    range.setEnd(this.rangeParent.nativeElement.lastChild, this.textRangeForm.get('end').value);
     document.getSelection().removeAllRanges();
     document.getSelection().addRange(range);
   }
